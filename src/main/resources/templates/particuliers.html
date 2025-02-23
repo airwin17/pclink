@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PC'Link</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap"
+        rel="stylesheet">
+        <script src="./particuliers.js" defer></script>
+</head>
+
+<body>
+    <div th:replace="~{fragements/header::headerPart}"></div>
+    <section class="mainSec">
+        <h1>PC’LINK Informatique</h1>
+        <p>une entreprise spécialisée dans le dépannage <br>
+            pour <span class="tobold">PC et MAC</span> de matériel informatique depuis 2010.</p>
+        <button class="headprime primebut">
+            <p>04 86 12 75 27</p>
+            <div class="icon">
+                <img src="../assets/phone-flip-svgrepo-com.svg" alt="icon telephone">
+            </div>
+        </button>
+    </section>
+    <div th:replace="~{fragements/services::servicesPart}"></div>
+    <section class="appareils">
+        <h2>Appareils pris en charge</h2>
+        <div class="appareilsContainer">
+            <div class="appareil">
+                <img src="../assets/computer-outline-red-svgrepo-com.svg" alt="icon computer">
+                <p>PC Bureau</p>
+            </div>
+            <div class="appareil">
+                <img src="../assets/monitor-svgrepo-com.svg" alt="icon monitor">
+                <p>Tout en 1</p>
+            </div>
+            <div class="appareil">
+                <img src="../assets/laptop-svgrepo-com.svg" alt="icon laptop">
+                <p>PC mobile</p>
+            </div>
+            <div class="appareil">
+                <img src="../assets/tablet-svgrepo-com.svg" alt="icon tablet">
+                <p>tablet</p>
+            </div>
+            <div class="appareil">
+                <img src="../assets/controller-joystick-games-video-console-svgrepo-com.svg" alt="icon controller">
+                <p>Consoles de jeux</p>
+            </div>
+            <div class="appareil">
+                <img src="../assets/apple-173-svgrepo-com.svg" alt="icon Apple">
+                <p>Appareils Apple</p>
+            </div>
+        </div>
+    </section>
+    <div th:replace="~{fragements/avis::avisPart}"></div>
+    <section class="times">
+        <h2>HORAIRES D'OUVERTURE</h2>
+        <table>
+            <tr>
+                <td>Lundi</td>
+                <td>9h30-12h<br>14h-18h30</td>
+            </tr>
+            <tr class="secondaryColor">
+                <td>Mardi</td>
+                <td>9h30-12h<br>14h-18h30</td>
+            </tr>
+            <tr>
+                <td>Mercredi</td>
+                <td>9h30-12h<br>14h-18h30</td>
+            </tr>
+            <tr class="secondaryColor">
+                <td>Jeudi</td>
+                <td>9h30-12h<br>14h-18h30</td>
+            </tr>
+            <tr>
+                <td>Vendredi</td>
+                <td>9h30-12h<br>14h-18h30</td>
+            </tr>
+            <tr class="secondaryColor">
+                <td>Samedi</td>
+                <td>10h30-12h<br>14h-18h30</td>
+            </tr>
+            <tr>
+                <td>Dimanche</td>
+                <td>Fermé</td>
+            </tr>
+        </table>
+    </section>
+    <section class="notreEquipe">
+        <h2>NOTRE EQUIPE</h2>
+        <div class="equipeContainer">
+            <div class="membre">
+                <img src="../assets/Remy.webp" alt="photo de profil">
+                <div class="content">
+                    <p>Remy</p>
+                    <p>Tecnicien et expert en communication</p>
+                </div>
+            </div>
+            <div class="membre">
+                <img src="../assets/Mohamed.webp" alt="photo de profil">
+                <div class="content">
+                    <p>Mo</p>
+                    <p>Tecnicien et administrateur de l'entreprise</p>
+                </div>
+            </div>
+            <div class="membre">
+                <img src="../assets/profile-svgrepo-com.svg" alt="photo de profil">
+                <div class="content">
+                    <p>Malek</p>
+                    <p>developpeur web et auteur de ce site</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <form action="">
+            <h2>Contact</h2>
+            <div class="inputPhoneContainer">
+                <label for="phone">Telephone</label>
+                <input type="tel" id="phone" name="phone" placeholder="obligatoire">
+            </div>
+            <div class="inputMailContainer">
+                <label for="mail">Email</label>
+                <input type="email" id="mail" name="mail" placeholder="facultatif">
+            </div>
+            <div class="inputMessageContainer">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message"></textarea>
+            </div>
+            <input id="submit" type="submit" value="Envoyer">
+        </form>
+    </section>
+</body>
+
+</html>

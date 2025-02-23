@@ -1,0 +1,146 @@
+<section class="Avis" th:fragment="avisPart">
+    <h2>AVIS</h2>
+    <div class="avisGlobale">
+        <img src="../assets/Google_2015_logo.svg.webp" alt="google">
+        <div class="rating">
+            <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                alt="filled star" th:if="${globalRating >= 1}">
+            <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                alt="filled star" th:if="${globalRating >= 2}">
+            <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                alt="filled star" th:if="${globalRating >= 3}">
+            <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                alt="filled star" th:if="${globalRating >= 4}">
+            <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                alt="filled star" th:if="${globalRating >= 5}">
+            <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${globalRating < 1}">
+            <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${globalRating < 2&& globalRating > 1}">
+            <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${globalRating < 3&& globalRating > 2}">
+            <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${globalRating < 4&& globalRating > 3}">
+            <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${globalRating < 5&& globalRating > 4}">
+            <img src="../assets/star-empty-rate-rating-outline-svgrepo-com.svg" alt="empty star" th:if="${globalRating <= 1}">
+            <img src="../assets/star-empty-rate-rating-outline-svgrepo-com.svg" alt="empty star" th:if="${globalRating <= 2}">
+            <img src="../assets/star-empty-rate-rating-outline-svgrepo-com.svg" alt="empty star" th:if="${globalRating <= 3}">
+            <img src="../assets/star-empty-rate-rating-outline-svgrepo-com.svg" alt="empty star" th:if="${globalRating <= 4}">
+        </div>
+        <p th:text="${globalRating}+' - '+${globalRatingCount}+' avis'"></p>
+    </div>
+    <div class="avisContainer">
+        <div class="avis" th:each="review : ${reviews}">
+            <div class="imgContainer">
+                <img th:src="@{${review.profilePic}}" alt="photo de profil">
+            </div>
+            <div class="profil">
+                <p class="profilName" th:text="${review.name}">profil name</p>
+                <p class="date" th:text="${review.date}">date</p>
+            </div>
+            <p class="comment" th:text="${review.comment}">avis</p>
+            <div class="rating" >
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star" th:if="${review.rating >= 1}">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star" th:if="${review.rating >= 2}">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star" th:if="${review.rating >= 3}">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star" th:if="${review.rating >= 4}">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star" th:if="${review.rating >= 5}">
+                <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${review.rating < 1}">
+                <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${review.rating < 2&& review.rating > 1}">
+                <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${review.rating < 3&& review.rating > 2}">
+                <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${review.rating < 4&& review.rating > 3}">
+                <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star" th:if="${review.rating < 5&& review.rating > 4}">
+                <img src="../assets/star-empty-rate-rating-outline-svgrepo-com.svg" alt="empty star" th:if="${review.rating <= 1}">
+                <img src="../assets/star-empty-rate-rating-outline-svgrepo-com.svg" alt="empty star" th:if="${review.rating <= 2}">
+                <img src="../assets/star-empty-rate-rating-outline-svgrepo-com.svg" alt="empty star" th:if="${review.rating <= 3}">
+                <img src="../assets/star-empty-rate-rating-outline-svgrepo-com.svg" alt="empty star" th:if="${review.rating <= 4}">
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="Avis" th:fragment="avisPro">
+    <h2>AVIS</h2>
+    <div class="avisGlobale">
+        <img src="../assets/Google_2015_logo.svg.webp" alt="google">
+        <div class="rating">
+            <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                alt="filled star">
+            <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                alt="filled star">
+            <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                alt="filled star">
+            <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                alt="filled star">
+            <img src="../assets/star-half-rate-rating-outline-svgrepo-com.svg" alt="half star">
+        </div>
+        <p>4.5/5 - 1000 avis</p>
+    </div>
+    <div class="avisContainer">
+        <div class="avis">
+            <div class="imgContainer">
+                <img src="../assets/profile-svgrepo-com.svg" alt="photo de profil">
+            </div>
+            <div class="profil">
+                <p class="profilName">profil name</p>
+                <p class="date">date</p>
+            </div>
+            <p class="comment">avis</p>
+            <div class="rating">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-rate-rating-outline-svgrepo-com.svg" alt="empty star">
+            </div>
+        </div>
+        <div class="avis">
+            <div class="imgContainer">
+                <img src="../assets/profile-svgrepo-com.svg" alt="photo de profil">
+            </div>
+            <div class="profil">
+                <p class="profilName">profil name</p>
+                <p class="date">date</p>
+            </div>
+            <p class="comment">avis</p>
+            <div class="rating">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-rate-rating-outline-svgrepo-com.svg" alt="empty star">
+            </div>
+        </div>
+        <div class="avis">
+            <div class="imgContainer">
+                <img src="../assets/profile-svgrepo-com.svg" alt="photo de profil">
+            </div>
+            <div class="profil">
+                <p class="profilName">profil name</p>
+                <p class="date">date</p>
+            </div>
+            <p class="comment">avis</p>
+            <div class="rating">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-filled-rate-rating-bookmark-favourite-save-priority-important-svgrepo-com.svg"
+                    alt="filled star">
+                <img src="../assets/star-rate-rating-outline-svgrepo-com.svg" alt="empty star">
+            </div>
+        </div>
+    </div>
+
+</section>
