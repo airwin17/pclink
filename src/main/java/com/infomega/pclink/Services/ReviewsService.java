@@ -42,7 +42,7 @@ public class ReviewsService {
                 ArrayNode reviewsNode = (ArrayNode) responseResviews.get("reviews");
                 globalRating = responseResviews.get("rating").asText();
                 globalRatingCount = responseResviews.get("userRatingCount").asText();
-                for (int i = 0; i < 3; i++) {
+                for (int i = 0; i < 5; i++) {
                     Review review = new Review();
                     JsonNode reviewObjectNode = reviewsNode.get(i);
                     review.setName(reviewObjectNode.get("authorAttribution").get("displayName").asText());

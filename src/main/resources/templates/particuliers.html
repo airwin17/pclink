@@ -15,6 +15,12 @@
 
 <body>
     <div th:replace="~{fragements/header::headerPart}"></div>
+    <div class="subMenu">
+        <button class="paybut secondbut" onclick="payer()">payer</button>
+        <button class="downloadbut secondbut" onclick="getexe()">assisstant PC'Link</button>
+        <button class="probut secondbut" onclick="toPro()">Vous êtes pro ?</button>
+        <button class="headprime primebut">
+    </div>
     <section class="mainSec">
         <h1>PC’LINK Informatique</h1>
         <p>une entreprise spécialisée dans le dépannage <br>
@@ -117,18 +123,20 @@
         </div>
     </section>
     <section class="contact">
-        <form action="">
+        <form action="https://api.web3forms.com/submit" method="POST">
             <h2>Contact</h2>
-            <div class="inputPhoneContainer">
-                <label for="phone">Telephone</label>
-                <input type="tel" id="phone" name="phone" placeholder="obligatoire">
-            </div>
+            <input type="hidden" name="access_key" value="fe7aa21c-60b9-4ce3-a669-b5cc6b50ab3e">
             <div class="inputMailContainer">
                 <label for="mail">Email</label>
-                <input type="email" id="mail" name="mail" placeholder="facultatif">
+                <input type="email" id="mail" name="mail" placeholder="obligatoire" required>
             </div>
+            <div class="inputPhoneContainer">
+                <label for="phone">objet</label>
+                <input type="text" id="phone" name="text" placeholder="obligatoire" required>
+            </div>
+            
             <div class="inputMessageContainer">
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message"></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message" required></textarea>
             </div>
             <input id="submit" type="submit" value="Envoyer">
         </form>

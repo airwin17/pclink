@@ -1,14 +1,16 @@
 nav {
-    position: sticky;
-    height: 2cm;
+    height: 80px;
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: min-content max-content min-content auto max-content max-content max-content max-content min-content;
-
 }
 
 header {
     overflow: visible;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 5;
 }
 
 body {
@@ -208,6 +210,7 @@ body {
                 animation-duration: 1s;
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
+                background-color: #fbd5b7;
             }
 
             &:hover {
@@ -402,7 +405,7 @@ body {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         margin: 10px auto;
         flex-direction: column;
-
+        align-items: center;
         @media (max-width: 600px) {
             width: 300px;
         }
@@ -416,7 +419,8 @@ body {
             display: flex;
             justify-content: center;
             flex-direction: row;
-            width: 100%;
+            width: fit-content;
+            justify-content: center;
 
             img {
                 width: 50px;

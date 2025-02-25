@@ -3,6 +3,8 @@ package com.infomega.pclink.Controllers;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -29,9 +31,9 @@ public class ViewController {
     @GetMapping("/particuliers")
     public String particuliers(Model model) {
         try {
-            model.addAttribute("reviews", reviewsService.loadReview());
-            model.addAttribute("globalRating", Double.valueOf(reviewsService.getGlobalRating()));
-            model.addAttribute("globalRatingCount", reviewsService.getGlobalRatingCount());
+            model.addAttribute("reviews", new LinkedList<>()/*reviewsService.loadReview()*/);
+            model.addAttribute("globalRating", 4.5 /**Double.valueOf(reviewsService.getGlobalRating())*/);
+            model.addAttribute("globalRatingCount", 198/*reviewsService.getGlobalRatingCount()*/);
         } catch (Exception e) {
             e.printStackTrace();
         }
