@@ -27,6 +27,9 @@ function toPro(){
 function toPart(){
     window.location.href = "/";
 }
+function toggleMenu(){
+    document.querySelector(".subMenuContainer").classList.toggle("hidden");
+}
 function loadtext(service){
     paragraph=document.getElementById("paragraph")
     servicesLI=document.getElementById("servicesLI")

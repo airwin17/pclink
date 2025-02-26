@@ -3,6 +3,9 @@ nav {
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: min-content max-content min-content auto max-content max-content max-content max-content min-content;
+    @media (max-width: 790px){
+        grid-template-columns: repeat(2,min-content) auto repeat(2,max-content);
+    }
 }
 
 header {
@@ -50,13 +53,14 @@ body {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 5px;
-    width: 1.5cm;
-    height: 1.5cm;
+    width: 55px;
+    aspect-ratio: 1/1;
     background-color: #FEF1E7;
     border-width: 0;
 
     @media (max-width: 790px) {
-        display: none;
+        width: 50px;
+        grid-column: 2/3;
     }
 
     >img {
@@ -75,6 +79,9 @@ body {
     font-size: 16px;
     font-family: "ubuntu", sans-serif;
     height: 1cm;
+    @media (max-width: 790px) {
+        display: none;
+    }
 }
 
 .paybut {
@@ -98,6 +105,9 @@ body {
 .headprime {
     grid-column: 9/10;
     margin: auto 5px;
+    @media (max-width: 790px){
+        grid-column: 4/5;
+    }
 }
 
 .primebut {
@@ -134,7 +144,67 @@ body {
         margin: auto 0;
     }
 }
-
+.hidden.subMenuContainer{
+    display: none;
+}
+.menuIcon{
+    background-image: url("./assets/menu-svgrepo-com.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    margin: auto 5px;
+    display: none;
+    grid-column: 5/6;
+    background-color: #fbd5b7;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    &:hover{
+        cursor: pointer;
+    }
+    @media (max-width: 790px) {
+        display: block;
+    }
+}
+.subMenuContainer{
+    position: absolute;
+    height: 1000px;
+    z-index: 6;
+    width: 350px;
+    background-color: white;
+    right: 0;
+    top: 80px;
+    display: grid;
+    grid-template-rows: repeat(4,max-content);
+    justify-items: left;
+    
+    > .resMenu{
+        display: grid;
+        height: 40px;
+        width: 100%;
+        overflow: hidden;
+        text-align: left;
+        padding: 5px;
+        border-bottom: 1px solid rgb(223, 223, 223);
+        &:hover{
+            cursor: pointer;
+        }
+        &.maplink{
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            color: black;
+        }
+        > img{
+            aspect-ratio: 1/1;
+            height: 45px;
+            margin: 0 5px;
+        }
+        > p{
+            margin: auto 10px;
+        }
+    }
+    
+}
 .mainSec {
     display: flex;
     flex-direction: column;
@@ -149,7 +219,6 @@ body {
     background-position: center;
     border-width: 0;
     height: 450px;
-
     >.primebut {
         margin: 1cm 15px;
     }
