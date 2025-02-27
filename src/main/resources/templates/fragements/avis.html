@@ -28,7 +28,7 @@
     <div class="avisContainer">
         <div class="avis" th:each="review : ${reviews}">
             <div class="imgContainer">
-                <img th:src="@{${review.profilePic}}" alt="photo de profil">
+                <img th:src="${review.profilePic}" alt="photo de profil">
             </div>
             <div class="profil">
                 <p class="profilName" th:text="${review.name}">profil name</p>

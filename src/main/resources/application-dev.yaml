@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: pclink
+server:
+  port: 3000
+
+

@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: pclink
+server:
+  port: 443

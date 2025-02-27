@@ -31,12 +31,7 @@ public class ReviewsService {
              + apikey
              + "&fields=reviews,rating,userRatingCount"
              + "&languageCode=fr";
-            /*HttpRequest request=HttpRequest.newBuilder(new URI(urlString)).GET().build();
-            HttpClient client = HttpClient.newHttpClient();
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());*/
             ResponseEntity<ObjectNode> res = restTemplate.getForEntity(urlString, ObjectNode.class);
-            
             ObjectNode responseResviews = res.getBody();
             if (responseResviews != null) {
                 ArrayNode reviewsNode = (ArrayNode) responseResviews.get("reviews");
@@ -52,6 +47,11 @@ public class ReviewsService {
                     review.setProfilePic(reviewObjectNode.get("authorAttribution").get("photoUri").asText());
                     reviews.add(review);
                 }
+            }
+            reviews.sort((r1, r2) -> Integer.compare(r1.getRating(), r2.getRating()));
+            if (reviews.size() > 2) {
+                reviews.remove(0);
+                reviews.remove(0);
             }
         return reviews;
     }

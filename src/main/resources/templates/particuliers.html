@@ -61,29 +61,47 @@
     <section class="times">
         <h2>HORAIRES D'OUVERTURE</h2>
         <table>
-            <tr>
-                <td>Lundi</td>
-                <td>9h30-12h<br>14h-18h30</td>
+            <tr th:with='businessDay=${businessDays.get("Lundi")}'>
+                <td th:text='${businessDay.getDay()}'></td>
+                <td><span th:text='${businessDay.getMornig()}'></span>
+                    <br>
+                    <span th:text="${businessDay.getEvening()}"></span>
+                </td>
             </tr>
-            <tr class="secondaryColor">
-                <td>Mardi</td>
-                <td>9h30-12h<br>14h-18h30</td>
+            <tr class="secondaryColor" th:with='businessDay=${businessDays.get("Mardi")}'>
+                <td th:text='${businessDay.getDay()}'></td>
+                <td><span th:text='${businessDay.getMornig()}'></span>
+                    <br>
+                    <span th:text="${businessDay.getEvening()}"></span>
+                </td>
             </tr>
-            <tr>
-                <td>Mercredi</td>
-                <td>9h30-12h<br>14h-18h30</td>
+            <tr th:with='businessDay=${businessDays.get("Mercredi")}'>
+                <td th:text='${businessDay.getDay()}'></td>
+                <td><span th:text='${businessDay.getMornig()}'></span>
+                    <br>
+                    <span th:text="${businessDay.getEvening()}"></span>
+                </td>
             </tr>
-            <tr class="secondaryColor">
-                <td>Jeudi</td>
-                <td>9h30-12h<br>14h-18h30</td>
+            <tr class="secondaryColor" th:with='businessDay=${businessDays.get("Jeudi")}'>
+                <td th:text='${businessDay.getDay()}'></td>
+                <td><span th:text='${businessDay.getMornig()}'></span>
+                    <br>
+                    <span th:text="${businessDay.getEvening()}"></span>
+                </td>
             </tr>
-            <tr>
-                <td>Vendredi</td>
-                <td>9h30-12h<br>14h-18h30</td>
+            <tr th:with='businessDay=${businessDays.get("Vendredi")}'>
+                <td th:text='${businessDay.getDay()}'></td>
+                <td><span th:text='${businessDay.getMornig()}'></span>
+                    <br>
+                    <span th:text="${businessDay.getEvening()}"></span>
+                </td>
             </tr>
-            <tr class="secondaryColor">
-                <td>Samedi</td>
-                <td>10h30-12h<br>14h-18h30</td>
+            <tr class="secondaryColor" th:with='businessDay=${businessDays.get("Samedi")}'>
+                <td th:text='${businessDay.getDay()}'></td>
+                <td><span th:text='${businessDay.getMornig()}'></span>
+                    <br>
+                    <span th:text="${businessDay.getEvening()}"></span>
+                </td>
             </tr>
             <tr>
                 <td>Dimanche</td>
