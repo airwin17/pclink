@@ -27,7 +27,6 @@ public class ViewController {
     }
     @GetMapping("/")
     public String redirectToParticuliers() {
-        
         return "redirect:/particuliers";
     }
     @CrossOrigin(origins = "*")
@@ -53,6 +52,10 @@ public class ViewController {
     @GetMapping("/pro")
     public String professionnels() {
         return "pro.html";
+    }
+    @GetMapping("/admin")
+    public String admin() {
+        return "redirect:http://localhost:1337/admin";
     }
     @GetMapping("/getexe")
     public ResponseEntity<Resource> getExe() {

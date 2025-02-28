@@ -18,6 +18,9 @@ function payer(){
 
         })
 }
+function callphone(){
+    location.href="tel:+33486127527";
+}
 function getexe(){
     window.location.href = "/getexe";
 }

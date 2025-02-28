@@ -12,15 +12,13 @@
         rel="stylesheet">
         <script src="./particuliers.js" defer></script>
 </head>
-
 <body>
     <div th:replace="~{fragements/header::headerPart}"></div>
-    
     <section class="mainSec">
         <h1>PC’LINK Informatique</h1>
         <p>une entreprise spécialisée dans le dépannage <br>
             pour <span class="tobold">PC et MAC</span> de matériel informatique depuis 2010.</p>
-        <button class="headprime primebut">
+        <button class="headprime primebut" onclick="callphone()">
             <p>04 86 12 75 27</p>
             <div class="icon">
                 <img src="../assets/phone-flip-svgrepo-com.svg" alt="icon telephone">
