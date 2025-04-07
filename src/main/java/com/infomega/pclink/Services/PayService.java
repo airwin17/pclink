@@ -13,7 +13,7 @@ import com.stripe.param.checkout.SessionCreateParams;
 @Service
 public class PayService {
     private final String testKey="sk_test_51QtVOKH7xNdXl7YEA6YLLWXAhoH2IPvRdjE5oVICIXIuVAmxX4tLuWMlIdtfaeDQePBTqemc8lc8rc2oTEHgB6lW00eumAF5qU";
-    private final String prodKey="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";
+    private final String prodKey="l";
     public PayService() {
         
     }
