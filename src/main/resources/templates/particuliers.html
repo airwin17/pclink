@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>PC'Link</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap"
@@ -21,7 +21,7 @@
         <button class="headprime primebut" onclick="callphone()">
             <p>04 86 12 75 27</p>
             <div class="icon">
-                <img src="../assets/phone-flip-svgrepo-com.svg" alt="icon telephone">
+                <img src="./assets/phone-flip-svgrepo-com.svg" alt="icon telephone">
             </div>
         </button>
     </section>
@@ -30,27 +30,27 @@
         <h2>Appareils pris en charge</h2>
         <div class="appareilsContainer">
             <div class="appareil">
-                <img src="../assets/computer-outline-red-svgrepo-com.svg" alt="icon computer">
+                <img src="./assets/computer-outline-red-svgrepo-com.svg" alt="icon computer">
                 <p>PC Bureau</p>
             </div>
             <div class="appareil">
-                <img src="../assets/monitor-svgrepo-com.svg" alt="icon monitor">
+                <img src="./assets/monitor-svgrepo-com.svg" alt="icon monitor">
                 <p>Tout en 1</p>
             </div>
             <div class="appareil">
-                <img src="../assets/laptop-svgrepo-com.svg" alt="icon laptop">
+                <img src="./assets/laptop-svgrepo-com.svg" alt="icon laptop">
                 <p>PC mobile</p>
             </div>
             <div class="appareil">
-                <img src="../assets/tablet-svgrepo-com.svg" alt="icon tablet">
+                <img src="./assets/tablet-svgrepo-com.svg" alt="icon tablet">
                 <p>tablet</p>
             </div>
             <div class="appareil">
-                <img src="../assets/controller-joystick-games-video-console-svgrepo-com.svg" alt="icon controller">
+                <img src="./assets/controller-joystick-games-video-console-svgrepo-com.svg" alt="icon controller">
                 <p>Consoles de jeux</p>
             </div>
             <div class="appareil">
-                <img src="../assets/apple-173-svgrepo-com.svg" alt="icon Apple">
+                <img src="./assets/apple-173-svgrepo-com.svg" alt="icon Apple">
                 <p>Appareils Apple</p>
             </div>
         </div>
@@ -59,47 +59,29 @@
     <section class="times">
         <h2>HORAIRES D'OUVERTURE</h2>
         <table>
-            <tr th:with='businessDay=${businessDays.get("Lundi")}'>
-                <td th:text='${businessDay.getDay()}'></td>
-                <td><span th:text='${businessDay.getMornig()}'></span>
-                    <br>
-                    <span th:text="${businessDay.getEvening()}"></span>
-                </td>
+            <tr>
+                <td>Lundi</td>
+                <td>9h30-12h<br>14h-18h30</td>
             </tr>
-            <tr class="secondaryColor" th:with='businessDay=${businessDays.get("Mardi")}'>
-                <td th:text='${businessDay.getDay()}'></td>
-                <td><span th:text='${businessDay.getMornig()}'></span>
-                    <br>
-                    <span th:text="${businessDay.getEvening()}"></span>
-                </td>
+            <tr class="secondaryColor">
+                <td>Mardi</td>
+                <td>9h30-12h<br>14h-18h30</td>
             </tr>
-            <tr th:with='businessDay=${businessDays.get("Mercredi")}'>
-                <td th:text='${businessDay.getDay()}'></td>
-                <td><span th:text='${businessDay.getMornig()}'></span>
-                    <br>
-                    <span th:text="${businessDay.getEvening()}"></span>
-                </td>
+            <tr>
+                <td>Mercredi</td>
+                <td>9h30-12h<br>14h-18h30</td>
             </tr>
-            <tr class="secondaryColor" th:with='businessDay=${businessDays.get("Jeudi")}'>
-                <td th:text='${businessDay.getDay()}'></td>
-                <td><span th:text='${businessDay.getMornig()}'></span>
-                    <br>
-                    <span th:text="${businessDay.getEvening()}"></span>
-                </td>
+            <tr class="secondaryColor">
+                <td>Jeudi</td>
+                <td>9h30-12h<br>14h-18h30</td>
             </tr>
-            <tr th:with='businessDay=${businessDays.get("Vendredi")}'>
-                <td th:text='${businessDay.getDay()}'></td>
-                <td><span th:text='${businessDay.getMornig()}'></span>
-                    <br>
-                    <span th:text="${businessDay.getEvening()}"></span>
-                </td>
+            <tr>
+                <td>Vendredi</td>
+                <td>9h30-12h<br>14h-18h30</td>
             </tr>
-            <tr class="secondaryColor" th:with='businessDay=${businessDays.get("Samedi")}'>
-                <td th:text='${businessDay.getDay()}'></td>
-                <td><span th:text='${businessDay.getMornig()}'></span>
-                    <br>
-                    <span th:text="${businessDay.getEvening()}"></span>
-                </td>
+            <tr class="secondaryColor">
+                <td>Samedi</td>
+                <td>10h30-12h<br>14h-18h30</td>
             </tr>
             <tr>
                 <td>Dimanche</td>
@@ -111,21 +93,21 @@
         <h2>NOTRE EQUIPE</h2>
         <div class="equipeContainer">
             <div class="membre">
-                <img src="../assets/Remy.webp" alt="photo de profil">
+                <img src="./assets/Remy.webp" alt="photo de profil">
                 <div class="content">
                     <p>Remy</p>
                     <p>Tecnicien et expert en communication</p>
                 </div>
             </div>
             <div class="membre">
-                <img src="../assets/Mohamed.webp" alt="photo de profil">
+                <img src="./assets/Mohamed.webp" alt="photo de profil">
                 <div class="content">
                     <p>Mo</p>
                     <p>Tecnicien et administrateur de l'entreprise</p>
                 </div>
             </div>
             <div class="membre">
-                <img src="../assets/profile-svgrepo-com.svg" alt="photo de profil">
+                <img src="./assets/profile-svgrepo-com.svg" alt="photo de profil">
                 <div class="content">
                     <p>Malek</p>
                     <p>developpeur web et auteur de ce site</p>

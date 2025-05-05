@@ -1,7 +1,3 @@
-console.log("particuliers.js loaded");
-apikey="AIzaSyD8OuOhwRkCzcW0wLKaSmQjACpH7J67UMg";
-placeID="ChIJrQP8HLy_yRIRoYAEOWkVIrA";
-
 function payer(){
     fetch("/api/pay/checkout")
         .then(response =>{
@@ -22,13 +18,13 @@ function callphone(){
     location.href="tel:+33486127527";
 }
 function getexe(){
-    window.location.href = "/getexe";
+    window.location.href = "./getexe";
 }
 function toPro(){
-    window.location.href = "/pro";
+    window.location.href = "./pro";
 }
 function toPart(){
-    window.location.href = "/";
+    window.location.href = "./";
 }
 function toggleMenu(){
     document.querySelector(".subMenuContainer").classList.toggle("hidden");

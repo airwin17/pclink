@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedList;
+import java.util.Map;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -11,39 +12,32 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.infomega.pclink.Services.BusinessDaysService;
-import com.infomega.pclink.Services.ReviewsService;
+import com.infomega.pclink.model.BusinessDay;
 
 @Controller
 public class ViewController {
-    private ReviewsService reviewsService;
     private BusinessDaysService businessDaysService;
-    public ViewController(ReviewsService reviewsService, BusinessDaysService businessDaysService) {
+    public ViewController(BusinessDaysService businessDaysService) {
         this.businessDaysService = businessDaysService;
-        this.reviewsService = reviewsService;
     }
     @GetMapping("/")
     public String redirectToParticuliers() {
         return "redirect:/particuliers";
     }
-    @CrossOrigin(origins = "*")
+    
     @GetMapping("/particuliers")
     public String particuliers(Model model) {
         try {
             String activeProfile = System.getProperty("spring.profiles.active");
-            if ("prod".equals(activeProfile)) {
-                model.addAttribute("reviews",reviewsService.loadReview());
-                model.addAttribute("globalRating", Double.valueOf(reviewsService.getGlobalRating()));
-                model.addAttribute("globalRatingCount",reviewsService.getGlobalRatingCount());
-            }else {
                 model.addAttribute("reviews", new LinkedList<>());
                 model.addAttribute("globalRating", 4.5);
                 model.addAttribute("globalRatingCount", 198);
-            }
-            model.addAttribute("businessDays", businessDaysService.getAllBusinessDays());
+            Map<String, BusinessDay> businessDays = businessDaysService.getAllBusinessDays();
+            System.out.println(businessDays);
+            model.addAttribute("businessDays", businessDays);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -52,10 +46,6 @@ public class ViewController {
     @GetMapping("/pro")
     public String professionnels() {
         return "pro.html";
-    }
-    @GetMapping("/admin")
-    public String admin() {
-        return "redirect:http://localhost:1337/admin";
     }
     @GetMapping("/getexe")
     public ResponseEntity<Resource> getExe() {

@@ -20,7 +20,7 @@ public class BusinessDaysService {
         Map<String,BusinessDay> businessDays = new HashMap<>();
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://localhost:1337/api/business-days";
-        String tokken = "deleted";
+        String tokken = "40af8071cf84d43558885e6db0d5c932348d780d1f4c658ab0d5623063066b755090c58f573745c032f6a71ce5d3bb8af22af13b6d2a888c674d2adf48acf1e1f74505b7370dccb839c6bd5ec58cd7484f4b48a4ae0783f082815e3447025edb65950b91779028e816abed4eacdee00d91952f751ed8d269b80265160f5c28d4";
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Bearer " + tokken);
         HttpEntity<String> entity = new HttpEntity<>(headers);
