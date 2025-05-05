@@ -1,0 +1,52 @@
+<header th:fragment="headerPart">
+    <nav>
+        <img class="logo" src="./assets/Logo2.webp" alt="logo">
+        <p class="headerAdress">68 avenue de saint Jerome<br>Marseille</p>
+        <a class="mapbut" href="https://maps.app.goo.gl/QZztDoCeW8SHR3Q26">
+            <img src="./assets/map-pin-alt-svgrepo-com.svg">
+        </a>
+        <button class="paybut secondbut" onclick="payer()">Payer</button>
+        <button class="downloadbut secondbut" onclick="getexe()">Assisstant PC'Link</button>
+        <button class="probut secondbut" onclick="toPro()">Vous êtes pro ?</button>
+        <button class="headprime primebut" onclick="callphone()">
+            <p>04 86 12 75 27</p>
+            <div class="icon">
+                <img src="./assets/phone-flip-svgrepo-com.svg" alt="icon telephone">
+            </div>
+        </button>
+        <div class="menuIcon" onclick="toggleMenu()"></div>
+        <div class="hidden subMenuContainer" >
+            <div class="switchPage resMenu" onclick="toPro()"><p>Vous êtes pro ?</p></div>
+            <div class="payLink resMenu" onclick="payer()"><p>Payer</p></div>
+            <div class="download resMenu" onclick="getexe()"><p>Assisstant PCLink</p></div>
+            <a class="maplink resMenu" href="https://maps.app.goo.gl/QZztDoCeW8SHR3Q26">
+                <img src="./assets/map-pin-alt-svgrepo-com.svg">
+                <p>68 avenue de saint Jerome</p>
+            </a>
+        </div>
+    </nav>
+</header>
+<header th:fragment="headerPro">
+    <nav>
+        <img class="logo" src="./assets/Logo2.webp" alt="logo">
+        <p class="headerAdress">68 avenue de saint Jerome<br>Marseille</p>
+        <button class="mapbut">
+            <img src="./assets/map-pin-alt-svgrepo-com.svg">
+        </button>
+        <button class="paybut secondbut" onclick="payer()">payer</button>
+        <button class="downloadbut secondbut" onclick="getexe()">assisstant PC'Link</button>
+        <button class="probut secondbut" onclick="toPart()">Vous êtes particulier ?</button>
+        <button class="headprime primebut">
+            <p>04 86 12 75 27</p>
+            <div class="icon">
+                <img src="./assets/phone-flip-svgrepo-com.svg" alt="icon telephone">
+            </div>
+        </button>
+        <div class="menuIcon"></div>
+        <div class="subMenuContainer hidden" >
+            <div class="switchPage"></div>
+            <div class="payLink"></div>
+            <div class="tomap"></div>
+        </div>
+    </nav>
+</header>
