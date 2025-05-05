@@ -30,17 +30,7 @@ public class ViewController {
     
     @GetMapping("/particuliers")
     public String particuliers(Model model) {
-        try {
-            String activeProfile = System.getProperty("spring.profiles.active");
-                model.addAttribute("reviews", new LinkedList<>());
-                model.addAttribute("globalRating", 4.5);
-                model.addAttribute("globalRatingCount", 198);
-            Map<String, BusinessDay> businessDays = businessDaysService.getAllBusinessDays();
-            System.out.println(businessDays);
-            model.addAttribute("businessDays", businessDays);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        
         return "particuliers.html";
     }
     @GetMapping("/pro")
